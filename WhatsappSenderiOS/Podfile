@@ -1,0 +1,28 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+inhibit_all_warnings!
+
+install! 'cocoapods',
+:deterministic_uuids => false
+
+target 'WhatsappSenderiOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for WhatsappSenderiOS
+
+  pod 'SwiftLint', '0.44.0'
+
+  target 'WhatsappSenderiOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'WhatsappSenderiOSUITests' do
+    # Pods for testing
+  end
+
+end
