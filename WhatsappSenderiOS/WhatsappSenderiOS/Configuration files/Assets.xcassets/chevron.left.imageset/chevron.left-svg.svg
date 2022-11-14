@@ -1,0 +1,11 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 17" width="10" height="17">
+	<title>chevron</title>
+	<style>
+		.s0 { opacity: 0;fill: #000000 } 
+		.s1 { opacity: .9;fill: #000000 } 
+	</style>
+	<g id="Layer">
+		<path id="Layer" class="s0" d="m0 0h9.6v17h-9.6z"/>
+		<path id="Layer" class="s1" d="m0.3 7.8l7.7-7.5q0.3-0.3 0.7-0.3c0.5 0 0.9 0.4 0.9 0.9 0 0.2-0.2 0.5-0.3 0.6l-7.1 7 7.1 6.9q0.2 0.3 0.3 0.7c0 0.5-0.4 0.9-0.9 0.9q-0.4 0-0.7-0.3l-7.7-7.6q-0.3-0.3-0.3-0.6 0-0.4 0.3-0.7z"/>
+	</g>
+</svg>

@@ -9,8 +9,19 @@
 /* Begin PBXBuildFile section */
 		09B435092ACCD33D52B0EB21 /* Pods_WhatsappSenderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A847F510947F139FE9C04E75 /* Pods_WhatsappSenderiOS.framework */; };
 		A75B5B1D0A4498C5715BCBB7 /* Pods_WhatsappSenderiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E37811D860FE0C6F3DD613F /* Pods_WhatsappSenderiOSTests.framework */; };
+		E172C605291D4AF400D07F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E172C607291D4AF400D07F17 /* Localizable.strings */; };
+		E172C60A291D4D4600D07F17 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C609291D4D4600D07F17 /* ContactModel.swift */; };
+		E172C614291D6BD000D07F17 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C613291D6BD000D07F17 /* ContactsTableViewCell.swift */; };
+		E172C616291D6F5500D07F17 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C615291D6F5500D07F17 /* ContactsViewModel.swift */; };
+		E17E601A291E828000C3D21E /* ChatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E6019291E828000C3D21E /* ChatsViewModel.swift */; };
+		E17E601F291E874A00C3D21E /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E601E291E874A00C3D21E /* Storyboarded.swift */; };
+		E17E6021291E897F00C3D21E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E6020291E897F00C3D21E /* MainCoordinator.swift */; };
+		E17E6023291E8DD200C3D21E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17E6022291E8DD200C3D21E /* Coordinator.swift */; };
+		E187B9CD2922739A0098D7B3 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187B9CC2922739A0098D7B3 /* Date+Ext.swift */; };
+		E187B9CF292275DD0098D7B3 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187B9CE292275DD0098D7B3 /* String+Ext.swift */; };
+		E187B9D229227C4D0098D7B3 /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187B9D129227C4D0098D7B3 /* ErrorMessages.swift */; };
+		E1A8E48C2922B7C00037362A /* MessageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A8E48B2922B7C00037362A /* MessageDetailViewModel.swift */; };
 		E1D7BE36291D13D100F12061 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE35291D13D100F12061 /* AppDelegate.swift */; };
-		E1D7BE3A291D13D100F12061 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE39291D13D100F12061 /* ViewController.swift */; };
 		E1D7BE3D291D13D100F12061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D7BE3B291D13D100F12061 /* Main.storyboard */; };
 		E1D7BE40291D13D100F12061 /* WhatsappSenderiOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE3E291D13D100F12061 /* WhatsappSenderiOS.xcdatamodeld */; };
 		E1D7BE42291D13D200F12061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D7BE41291D13D200F12061 /* Assets.xcassets */; };
@@ -18,6 +29,9 @@
 		E1D7BE50291D13D200F12061 /* WhatsappSenderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE4F291D13D200F12061 /* WhatsappSenderiOSTests.swift */; };
 		E1D7BE5A291D13D200F12061 /* WhatsappSenderiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE59291D13D200F12061 /* WhatsappSenderiOSUITests.swift */; };
 		E1D7BE5C291D13D200F12061 /* WhatsappSenderiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7BE5B291D13D200F12061 /* WhatsappSenderiOSUITestsLaunchTests.swift */; };
+		E1E10DE82922CFE0008D54F5 /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E10DE72922CFE0008D54F5 /* Array+Ext.swift */; };
+		E1E10DEA2922D1F5008D54F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E10DE92922D1F5008D54F5 /* Constants.swift */; };
+		E1E96F55291D3C7100E1DB87 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E96F54291D3C7100E1DB87 /* HistoryViewModel.swift */; };
 		FAA72110D91291F9DAA6E9E9 /* Pods_WhatsappSenderiOS_WhatsappSenderiOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B91384511622DDC5803010C1 /* Pods_WhatsappSenderiOS_WhatsappSenderiOSUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,9 +64,21 @@
 		C75412203D9B38F97447382A /* Pods-WhatsappSenderiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappSenderiOS.release.xcconfig"; path = "Target Support Files/Pods-WhatsappSenderiOS/Pods-WhatsappSenderiOS.release.xcconfig"; sourceTree = "<group>"; };
 		E139DC5C291D19710027B9E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E139DC5D291D19710027B9E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		E172C606291D4AF400D07F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E172C608291D4AF700D07F17 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E172C609291D4D4600D07F17 /* ContactModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		E172C613291D6BD000D07F17 /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		E172C615291D6F5500D07F17 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		E17E6019291E828000C3D21E /* ChatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewModel.swift; sourceTree = "<group>"; };
+		E17E601E291E874A00C3D21E /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		E17E6020291E897F00C3D21E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		E17E6022291E8DD200C3D21E /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E187B9CC2922739A0098D7B3 /* Date+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		E187B9CE292275DD0098D7B3 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		E187B9D129227C4D0098D7B3 /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		E1A8E48B2922B7C00037362A /* MessageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewModel.swift; sourceTree = "<group>"; };
 		E1D7BE32291D13D100F12061 /* WhatsappSenderiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsappSenderiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D7BE35291D13D100F12061 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1D7BE39291D13D100F12061 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1D7BE3C291D13D100F12061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1D7BE3F291D13D100F12061 /* WhatsappSenderiOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WhatsappSenderiOS.xcdatamodel; sourceTree = "<group>"; };
 		E1D7BE41291D13D200F12061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +89,10 @@
 		E1D7BE55291D13D200F12061 /* WhatsappSenderiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsappSenderiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1D7BE59291D13D200F12061 /* WhatsappSenderiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappSenderiOSUITests.swift; sourceTree = "<group>"; };
 		E1D7BE5B291D13D200F12061 /* WhatsappSenderiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappSenderiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E1E10DE62922CE66008D54F5 /* WhatsappSenderiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhatsappSenderiOS.entitlements; sourceTree = "<group>"; };
+		E1E10DE72922CFE0008D54F5 /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		E1E10DE92922D1F5008D54F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E1E96F54291D3C7100E1DB87 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +146,84 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1288A7F291D2B3F00DBFAFB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E172C609291D4D4600D07F17 /* ContactModel.swift */,
+				E1D7BE3E291D13D100F12061 /* WhatsappSenderiOS.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E1288A80291D2B4700DBFAFB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7BE43291D13D200F12061 /* LaunchScreen.storyboard */,
+				E1D7BE3B291D13D100F12061 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E1288A81291D2B4F00DBFAFB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E17E6019291E828000C3D21E /* ChatsViewModel.swift */,
+				E172C613291D6BD000D07F17 /* ContactsTableViewCell.swift */,
+				E172C615291D6F5500D07F17 /* ContactsViewModel.swift */,
+				E1E96F54291D3C7100E1DB87 /* HistoryViewModel.swift */,
+				E1A8E48B2922B7C00037362A /* MessageDetailViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E1288A82291D2B9200DBFAFB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7BE35291D13D100F12061 /* AppDelegate.swift */,
+				E1E10DE92922D1F5008D54F5 /* Constants.swift */,
+				E17E6020291E897F00C3D21E /* MainCoordinator.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E1288A83291D2BAA00DBFAFB /* Configuration files */ = {
+			isa = PBXGroup;
+			children = (
+				E1D7BE41291D13D200F12061 /* Assets.xcassets */,
+				E1D7BE46291D13D200F12061 /* Info.plist */,
+				E172C607291D4AF400D07F17 /* Localizable.strings */,
+				E1E10DE62922CE66008D54F5 /* WhatsappSenderiOS.entitlements */,
+			);
+			path = "Configuration files";
+			sourceTree = "<group>";
+		};
+		E17E601D291E872900C3D21E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E17E6022291E8DD200C3D21E /* Coordinator.swift */,
+				E17E601E291E874A00C3D21E /* Storyboarded.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		E187B9CB2922738F0098D7B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1E10DE72922CFE0008D54F5 /* Array+Ext.swift */,
+				E187B9CC2922739A0098D7B3 /* Date+Ext.swift */,
+				E187B9CE292275DD0098D7B3 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E187B9D029227C410098D7B3 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				E187B9D129227C4D0098D7B3 /* ErrorMessages.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		E1D7BE29291D13D100F12061 = {
 			isa = PBXGroup;
 			children = (
@@ -141,13 +249,14 @@
 		E1D7BE34291D13D100F12061 /* WhatsappSenderiOS */ = {
 			isa = PBXGroup;
 			children = (
-				E1D7BE35291D13D100F12061 /* AppDelegate.swift */,
-				E1D7BE41291D13D200F12061 /* Assets.xcassets */,
-				E1D7BE46291D13D200F12061 /* Info.plist */,
-				E1D7BE43291D13D200F12061 /* LaunchScreen.storyboard */,
-				E1D7BE3B291D13D100F12061 /* Main.storyboard */,
-				E1D7BE39291D13D100F12061 /* ViewController.swift */,
-				E1D7BE3E291D13D100F12061 /* WhatsappSenderiOS.xcdatamodeld */,
+				E1288A83291D2BAA00DBFAFB /* Configuration files */,
+				E1288A82291D2B9200DBFAFB /* Controllers */,
+				E187B9D029227C410098D7B3 /* Enums */,
+				E187B9CB2922738F0098D7B3 /* Extensions */,
+				E1288A7F291D2B3F00DBFAFB /* Models */,
+				E17E601D291E872900C3D21E /* Protocols */,
+				E1288A81291D2B4F00DBFAFB /* ViewModels */,
+				E1288A80291D2B4700DBFAFB /* Views */,
 			);
 			path = WhatsappSenderiOS;
 			sourceTree = "<group>";
@@ -279,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1D7BE45291D13D200F12061 /* LaunchScreen.storyboard in Resources */,
+				E172C605291D4AF400D07F17 /* Localizable.strings in Resources */,
 				E1D7BE42291D13D200F12061 /* Assets.xcassets in Resources */,
 				E1D7BE3D291D13D100F12061 /* Main.storyboard in Resources */,
 			);
@@ -383,7 +493,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# exit 0\nif which \"${PODS_ROOT}/Pods/SwiftLint/swiftlint\" > /dev/null; then\n  ${PODS_ROOT}/Pods/SwiftLint/swiftlint --autocorrect && ${PODS_ROOT}/Pods/SwiftLint/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#exit 0\nif which \"${PODS_ROOT}/SwiftLint/swiftlint\" > /dev/null; then\n  ${PODS_ROOT}/SwiftLint/swiftlint --autocorrect && ${PODS_ROOT}/SwiftLint/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -392,9 +502,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1D7BE3A291D13D100F12061 /* ViewController.swift in Sources */,
+				E172C614291D6BD000D07F17 /* ContactsTableViewCell.swift in Sources */,
+				E1E10DEA2922D1F5008D54F5 /* Constants.swift in Sources */,
 				E1D7BE36291D13D100F12061 /* AppDelegate.swift in Sources */,
+				E17E601A291E828000C3D21E /* ChatsViewModel.swift in Sources */,
+				E187B9CF292275DD0098D7B3 /* String+Ext.swift in Sources */,
+				E187B9CD2922739A0098D7B3 /* Date+Ext.swift in Sources */,
+				E1E10DE82922CFE0008D54F5 /* Array+Ext.swift in Sources */,
+				E187B9D229227C4D0098D7B3 /* ErrorMessages.swift in Sources */,
+				E172C616291D6F5500D07F17 /* ContactsViewModel.swift in Sources */,
+				E17E6021291E897F00C3D21E /* MainCoordinator.swift in Sources */,
+				E17E6023291E8DD200C3D21E /* Coordinator.swift in Sources */,
 				E1D7BE40291D13D100F12061 /* WhatsappSenderiOS.xcdatamodeld in Sources */,
+				E172C60A291D4D4600D07F17 /* ContactModel.swift in Sources */,
+				E17E601F291E874A00C3D21E /* Storyboarded.swift in Sources */,
+				E1E96F55291D3C7100E1DB87 /* HistoryViewModel.swift in Sources */,
+				E1A8E48C2922B7C00037362A /* MessageDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +554,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E172C607291D4AF400D07F17 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E172C606291D4AF400D07F17 /* en */,
+				E172C608291D4AF700D07F17 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		E1D7BE3B291D13D100F12061 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -574,18 +706,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WhatsappSenderiOS/Configuration files/WhatsappSenderiOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z89H362UJQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatsappSenderiOS/Info.plist;
+				INFOPLIST_FILE = "WhatsappSenderiOS/Configuration files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "This app uses contacts to be able to send whatsapp message";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID to log you in";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,18 +745,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "WhatsappSenderiOS/Configuration files/WhatsappSenderiOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z89H362UJQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = WhatsappSenderiOS/Info.plist;
+				INFOPLIST_FILE = "WhatsappSenderiOS/Configuration files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSContactsUsageDescription = "This app uses contacts to be able to send whatsapp message";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "This app uses Face ID to log you in";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UIStatusBarHidden = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

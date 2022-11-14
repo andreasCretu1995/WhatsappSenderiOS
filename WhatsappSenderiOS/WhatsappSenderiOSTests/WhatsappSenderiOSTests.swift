@@ -5,8 +5,8 @@
 //  Created by Andreas Alexandru Cretu on 10/11/22.
 //
 
-import XCTest
 @testable import WhatsappSenderiOS
+import XCTest
 
 final class WhatsappSenderiOSTests: XCTestCase {
 
@@ -32,5 +32,4 @@ final class WhatsappSenderiOSTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

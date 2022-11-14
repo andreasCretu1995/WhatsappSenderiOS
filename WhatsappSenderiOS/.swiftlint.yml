@@ -19,19 +19,6 @@ disabled_rules:
   - nesting
   - line_length
 
-excluded:
-  - santander-one
-  - "**/R.generated.swift"
-  # "**" its meant as a wildcard for that folder level. Because of that,
-  # it's required to add "**" for each level until Example or Pods is reached.
-  - "**/**/**/Example"
-  - "**/**/**/Pods"
-  - "**/Pods"
-  - Modules/Libraries/SANLibraryV3
-  - Santander/Trusteer
-included:
-  - Modules
-
 cyclomatic_complexity:
   warning: 10
   error: 25
@@ -54,3 +41,75 @@ function_body_length:
     error: 130
 
 warning_threshold: 150
+
+large_tuple:
+    warning: 3
+    error:   4
+    
+function_parameter_count:
+    warning: 6
+    error: 8
+    
+type_body_length:
+    warning: 400
+    error: 800
+
+opt_in_rules:
+- anonymous_argument_in_multiline_closure
+- array_init
+- collection_alignment
+- conditional_returns_on_newline
+- contains_over_filter_count
+- contains_over_filter_is_empty
+- contains_over_first_not_nil
+- contains_over_range_nil_comparison
+- discouraged_none_name
+- discouraged_optional_boolean
+- empty_collection_literal
+- empty_count
+- empty_string
+- file_types_order
+- first_where
+##- force_unwrapping
+- identical_operands
+##- implicitly_unwrapped_optional
+- last_where
+- legacy_multiple
+- legacy_objc_type
+##- multiline_arguments
+- multiline_parameters
+- multiline_function_chains
+- sorted_first_last
+- sorted_imports
+- switch_case_on_newline
+#- type_contents_order
+- typesafe_array_init
+- unused_declaration
+- xct_specific_matcher
+- yoda_condition
+
+#Autocorrect
+- colon
+- comma
+- comma_inheritance
+- control_statement
+- closure_end_indentation
+- closure_spacing
+- operator_usage_whitespace
+- redundant_type_annotation
+- trailing_newline
+- toggle_bool
+- unneeded_parentheses_in_closure_argument
+- unused_import
+- vertical_whitespace_between_cases
+- vertical_whitespace_closing_braces
+
+excluded:
+- Pods
+
+# configurable rules can be customized from this configuration file
+
+force_cast: warning     # Give warning only for force casting
+force_try: warning      # Give warning only for force try
+    
+reporter: "xcode"

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  WhatsappSenderiOS
+
+  Created by Andreas Alexandru Cretu on 10/11/22.
+  
+*/
+
+"contacts_view_title_contacts" = "Contactos";
+"contacts_view_refreshControl_title" = "Tire para actualizar";
+"contacts_view_searchBar_placeholder" = "Buscar";
+"contacts_view_enter_number" = "Introducir número";
+"contacts_view_enter_country_prefix" = "Introducir prefijo del país";
+"history_view_title_history" = "Historia";
+"chat_view_title_contacts" = "Conversación";
+"back" = "Atrás";
+"chats_view_messageTextField_placeholder" = "Mensaje";
+"error_noPhoneNumber" = "No hay número de teléfono";
+"error_noMessage" = "No hay mensaje";
+"error_couldNotFetch" = "No se pudo obtener";
+"error_errorSaving" = "Error guardando";
