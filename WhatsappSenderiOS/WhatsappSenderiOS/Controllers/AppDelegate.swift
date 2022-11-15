@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var userDefaults: UserDefaults!
+    
+    var tabbarViewController = TabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,12 +23,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.userDefaults = UserDefaults(suiteName: Constants().userDefaultsSuitName)
         self.removeUserDefaults(userDefaults: self.userDefaults)
+
+        self.createItems3DTouch()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UIStoryboard(name: Constants().UIStoryboardName, bundle: nil).instantiateInitialViewController()
         window?.makeKeyAndVisible()
         
         return true
+    }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem) async -> Bool {
+       
+        switch shortcutItem.type {
+        case Constants().historyViewQuickAccessType:
+            tabbarViewController.showView(index: 1)
+
+        default:
+            tabbarViewController.showView(index: 0)
+        }
+        
+        return true
+    }
+    
+    func createItems3DTouch() {
+        // ICONO DEL ACCESO DIRECTO
+        let iconContactsView: UIApplicationShortcutIcon! = UIApplicationShortcutIcon(templateImageName: "person.circle.fill")
+        // TITULO Y SUBTITULO DE LOS ACCESOS DIRECTOS
+        let contactsViewQuickAccess: UIApplicationShortcutItem! = UIMutableApplicationShortcutItem(
+            type: Constants().contactsViewQuickAccessType,
+            localizedTitle: NSLocalizedString("contacts_view_title_contacts", comment: ""),
+            localizedSubtitle: "",
+            icon: iconContactsView,
+            userInfo: nil)
+        
+        let iconHistoryView: UIApplicationShortcutIcon! = UIApplicationShortcutIcon(templateImageName: "clock.fill")
+        let historyViewQuickAccess: UIApplicationShortcutItem! = UIMutableApplicationShortcutItem(
+            type: Constants().historyViewQuickAccessType,
+            localizedTitle: NSLocalizedString("history_view_title_history", comment: ""),
+            localizedSubtitle: "",
+            icon: iconHistoryView,
+            userInfo: nil)
+        
+        // ARRAY CON LOS ELEMENTOS
+        let items: [UIApplicationShortcutItem]! = [contactsViewQuickAccess, historyViewQuickAccess]
+        UIApplication.shared.shortcutItems = items
     }
 
     // MARK: UISceneSession Lifecycle

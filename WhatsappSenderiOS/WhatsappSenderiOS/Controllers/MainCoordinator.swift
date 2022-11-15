@@ -10,9 +10,9 @@ import UIKit
 
 class MainCoordinator: Coordinator {
     
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController?
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController?) {
         self.navigationController = navigationController
     }
     
@@ -22,11 +22,11 @@ class MainCoordinator: Coordinator {
         viewController.coordinator = self
         viewController.contact = contact
         
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func goToRootView() {
-        navigationController.popToRootViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func goToMessageDetailView(message: NSManagedObject) {
@@ -35,7 +35,7 @@ class MainCoordinator: Coordinator {
         viewController.coordinator = self
         viewController.message = message
         
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func goToHistoryView() {
@@ -43,6 +43,6 @@ class MainCoordinator: Coordinator {
         let viewController = HistoryViewModel.instantiate()
         viewController.coordinator = self
         
-        navigationController.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

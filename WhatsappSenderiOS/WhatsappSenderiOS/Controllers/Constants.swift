@@ -18,4 +18,6 @@ final class Constants {
     let authenticateUserDefaultNameOnContacts = "authenticatedOnContacts"
     let authenticateUserDefaultNameOnHistory = "authenticatedOnHistory"
     let datesFormat = "dd-MM-yyyy HH:mm:ss"
+    let contactsViewQuickAccessType = "contacts.view.quick.access"
+    let historyViewQuickAccessType = "history.view.quick.access"
 }

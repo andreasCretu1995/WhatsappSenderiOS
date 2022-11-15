@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		09B435092ACCD33D52B0EB21 /* Pods_WhatsappSenderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A847F510947F139FE9C04E75 /* Pods_WhatsappSenderiOS.framework */; };
 		A75B5B1D0A4498C5715BCBB7 /* Pods_WhatsappSenderiOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E37811D860FE0C6F3DD613F /* Pods_WhatsappSenderiOSTests.framework */; };
+		E12342EC2923BB4F00EFEF49 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12342EB2923BB4F00EFEF49 /* TabBarController.swift */; };
+		E12342F32923BF9900EFEF49 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12342F22923BF9900EFEF49 /* WidgetKit.framework */; };
+		E12342F52923BF9900EFEF49 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12342F42923BF9900EFEF49 /* SwiftUI.framework */; };
+		E12342F82923BF9900EFEF49 /* WhatsappSenderiOS_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12342F72923BF9900EFEF49 /* WhatsappSenderiOS_WidgetBundle.swift */; };
+		E12342FA2923BF9900EFEF49 /* WhatsappSenderiOS_WidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12342F92923BF9900EFEF49 /* WhatsappSenderiOS_WidgetLiveActivity.swift */; };
+		E12342FC2923BF9900EFEF49 /* WhatsappSenderiOS_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12342FB2923BF9900EFEF49 /* WhatsappSenderiOS_Widget.swift */; };
+		E12342FE2923BF9A00EFEF49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E12342FD2923BF9A00EFEF49 /* Assets.xcassets */; };
+		E12343022923BF9A00EFEF49 /* WhatsappSenderiOS WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E12342F12923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E172C605291D4AF400D07F17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E172C607291D4AF400D07F17 /* Localizable.strings */; };
 		E172C60A291D4D4600D07F17 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C609291D4D4600D07F17 /* ContactModel.swift */; };
 		E172C614291D6BD000D07F17 /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C613291D6BD000D07F17 /* ContactsTableViewCell.swift */; };
@@ -36,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E12343002923BF9A00EFEF49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E1D7BE2A291D13D100F12061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E12342F02923BF9900EFEF49;
+			remoteInfo = "WhatsappSenderiOS WidgetExtension";
+		};
 		E1D7BE4C291D13D200F12061 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E1D7BE2A291D13D100F12061 /* Project object */;
@@ -52,6 +67,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E12343062923BF9A00EFEF49 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E12343022923BF9A00EFEF49 /* WhatsappSenderiOS WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0014EB310C79198D1CAB2EEB /* Pods-WhatsappSenderiOS-WhatsappSenderiOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappSenderiOS-WhatsappSenderiOSUITests.release.xcconfig"; path = "Target Support Files/Pods-WhatsappSenderiOS-WhatsappSenderiOSUITests/Pods-WhatsappSenderiOS-WhatsappSenderiOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		31D5DB052E5B54F885784789 /* Pods-WhatsappSenderiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappSenderiOSTests.release.xcconfig"; path = "Target Support Files/Pods-WhatsappSenderiOSTests/Pods-WhatsappSenderiOSTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +91,15 @@
 		A9F2077F508FA5A227EEE021 /* Pods-WhatsappSenderiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappSenderiOS.debug.xcconfig"; path = "Target Support Files/Pods-WhatsappSenderiOS/Pods-WhatsappSenderiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B91384511622DDC5803010C1 /* Pods_WhatsappSenderiOS_WhatsappSenderiOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsappSenderiOS_WhatsappSenderiOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C75412203D9B38F97447382A /* Pods-WhatsappSenderiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappSenderiOS.release.xcconfig"; path = "Target Support Files/Pods-WhatsappSenderiOS/Pods-WhatsappSenderiOS.release.xcconfig"; sourceTree = "<group>"; };
+		E12342EB2923BB4F00EFEF49 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		E12342F12923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WhatsappSenderiOS WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12342F22923BF9900EFEF49 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E12342F42923BF9900EFEF49 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E12342F72923BF9900EFEF49 /* WhatsappSenderiOS_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappSenderiOS_WidgetBundle.swift; sourceTree = "<group>"; };
+		E12342F92923BF9900EFEF49 /* WhatsappSenderiOS_WidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappSenderiOS_WidgetLiveActivity.swift; sourceTree = "<group>"; };
+		E12342FB2923BF9900EFEF49 /* WhatsappSenderiOS_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappSenderiOS_Widget.swift; sourceTree = "<group>"; };
+		E12342FD2923BF9A00EFEF49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E12342FF2923BF9A00EFEF49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E139DC5C291D19710027B9E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E139DC5D291D19710027B9E2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		E172C606291D4AF400D07F17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -96,6 +134,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E12342EE2923BF9900EFEF49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12342F52923BF9900EFEF49 /* SwiftUI.framework in Frameworks */,
+				E12342F32923BF9900EFEF49 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D7BE2F291D13D100F12061 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,8 +189,22 @@
 				B91384511622DDC5803010C1 /* Pods_WhatsappSenderiOS_WhatsappSenderiOSUITests.framework */,
 				A847F510947F139FE9C04E75 /* Pods_WhatsappSenderiOS.framework */,
 				4E37811D860FE0C6F3DD613F /* Pods_WhatsappSenderiOSTests.framework */,
+				E12342F22923BF9900EFEF49 /* WidgetKit.framework */,
+				E12342F42923BF9900EFEF49 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E12342F62923BF9900EFEF49 /* WhatsappSenderiOS Widget */ = {
+			isa = PBXGroup;
+			children = (
+				E12342F72923BF9900EFEF49 /* WhatsappSenderiOS_WidgetBundle.swift */,
+				E12342F92923BF9900EFEF49 /* WhatsappSenderiOS_WidgetLiveActivity.swift */,
+				E12342FB2923BF9900EFEF49 /* WhatsappSenderiOS_Widget.swift */,
+				E12342FD2923BF9A00EFEF49 /* Assets.xcassets */,
+				E12342FF2923BF9A00EFEF49 /* Info.plist */,
+			);
+			path = "WhatsappSenderiOS Widget";
 			sourceTree = "<group>";
 		};
 		E1288A7F291D2B3F00DBFAFB /* Models */ = {
@@ -172,6 +233,7 @@
 				E172C615291D6F5500D07F17 /* ContactsViewModel.swift */,
 				E1E96F54291D3C7100E1DB87 /* HistoryViewModel.swift */,
 				E1A8E48B2922B7C00037362A /* MessageDetailViewModel.swift */,
+				E12342EB2923BB4F00EFEF49 /* TabBarController.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -231,6 +293,7 @@
 				73DF20B1E8F65FC4E20E18A9 /* Pods */,
 				E1D7BE33291D13D100F12061 /* Products */,
 				E1D7BE34291D13D100F12061 /* WhatsappSenderiOS */,
+				E12342F62923BF9900EFEF49 /* WhatsappSenderiOS Widget */,
 				E1D7BE4E291D13D200F12061 /* WhatsappSenderiOSTests */,
 				E1D7BE58291D13D200F12061 /* WhatsappSenderiOSUITests */,
 			);
@@ -242,6 +305,7 @@
 				E1D7BE32291D13D100F12061 /* WhatsappSenderiOS.app */,
 				E1D7BE4B291D13D200F12061 /* WhatsappSenderiOSTests.xctest */,
 				E1D7BE55291D13D200F12061 /* WhatsappSenderiOSUITests.xctest */,
+				E12342F12923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +345,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E12342F02923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E12343032923BF9A00EFEF49 /* Build configuration list for PBXNativeTarget "WhatsappSenderiOS WidgetExtension" */;
+			buildPhases = (
+				E12342ED2923BF9900EFEF49 /* Sources */,
+				E12342EE2923BF9900EFEF49 /* Frameworks */,
+				E12342EF2923BF9900EFEF49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WhatsappSenderiOS WidgetExtension";
+			productName = "WhatsappSenderiOS WidgetExtension";
+			productReference = E12342F12923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E1D7BE31291D13D100F12061 /* WhatsappSenderiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E1D7BE5F291D13D200F12061 /* Build configuration list for PBXNativeTarget "WhatsappSenderiOS" */;
@@ -290,10 +371,12 @@
 				E1D7BE2F291D13D100F12061 /* Frameworks */,
 				E1D7BE30291D13D100F12061 /* Resources */,
 				E17F653E291D1CF8007C03BA /* Swiftlint */,
+				E12343062923BF9A00EFEF49 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E12343012923BF9A00EFEF49 /* PBXTargetDependency */,
 			);
 			name = WhatsappSenderiOS;
 			productName = WhatsappSenderiOS;
@@ -348,6 +431,9 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					E12342F02923BF9900EFEF49 = {
+						CreatedOnToolsVersion = 14.1;
+					};
 					E1D7BE31291D13D100F12061 = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -378,11 +464,20 @@
 				E1D7BE31291D13D100F12061 /* WhatsappSenderiOS */,
 				E1D7BE4A291D13D200F12061 /* WhatsappSenderiOSTests */,
 				E1D7BE54291D13D200F12061 /* WhatsappSenderiOSUITests */,
+				E12342F02923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E12342EF2923BF9900EFEF49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12342FE2923BF9A00EFEF49 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D7BE30291D13D100F12061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,6 +593,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E12342ED2923BF9900EFEF49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E12342F82923BF9900EFEF49 /* WhatsappSenderiOS_WidgetBundle.swift in Sources */,
+				E12342FC2923BF9900EFEF49 /* WhatsappSenderiOS_Widget.swift in Sources */,
+				E12342FA2923BF9900EFEF49 /* WhatsappSenderiOS_WidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1D7BE2E291D13D100F12061 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +613,7 @@
 				E17E601A291E828000C3D21E /* ChatsViewModel.swift in Sources */,
 				E187B9CF292275DD0098D7B3 /* String+Ext.swift in Sources */,
 				E187B9CD2922739A0098D7B3 /* Date+Ext.swift in Sources */,
+				E12342EC2923BB4F00EFEF49 /* TabBarController.swift in Sources */,
 				E1E10DE82922CFE0008D54F5 /* Array+Ext.swift in Sources */,
 				E187B9D229227C4D0098D7B3 /* ErrorMessages.swift in Sources */,
 				E172C616291D6F5500D07F17 /* ContactsViewModel.swift in Sources */,
@@ -541,6 +647,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E12343012923BF9A00EFEF49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E12342F02923BF9900EFEF49 /* WhatsappSenderiOS WidgetExtension */;
+			targetProxy = E12343002923BF9A00EFEF49 /* PBXContainerItemProxy */;
+		};
 		E1D7BE4D291D13D200F12061 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E1D7BE31291D13D100F12061 /* WhatsappSenderiOS */;
@@ -584,6 +695,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E12343042923BF9A00EFEF49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z89H362UJQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WhatsappSenderiOS Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WhatsappSenderiOS Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andreasCretu1995.WhatsappSenderiOS.WhatsappSenderiOS-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E12343052923BF9A00EFEF49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z89H362UJQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WhatsappSenderiOS Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WhatsappSenderiOS Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andreasCretu1995.WhatsappSenderiOS.WhatsappSenderiOS-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		E1D7BE5D291D13D200F12061 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -704,6 +871,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9F2077F508FA5A227EEE021 /* Pods-WhatsappSenderiOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "WhatsappSenderiOS/Configuration files/WhatsappSenderiOS.entitlements";
@@ -743,6 +911,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C75412203D9B38F97447382A /* Pods-WhatsappSenderiOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "WhatsappSenderiOS/Configuration files/WhatsappSenderiOS.entitlements";
@@ -861,6 +1030,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E12343032923BF9A00EFEF49 /* Build configuration list for PBXNativeTarget "WhatsappSenderiOS WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E12343042923BF9A00EFEF49 /* Debug */,
+				E12343052923BF9A00EFEF49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E1D7BE2D291D13D100F12061 /* Build configuration list for PBXProject "WhatsappSenderiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
