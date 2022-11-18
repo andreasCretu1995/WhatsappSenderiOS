@@ -40,7 +40,7 @@ final class MessageDetailViewModel: UIViewController, Storyboarded {
         
         title = message != nil ? "\(sendedDate!.toString(withFormat: Constants().datesFormat)) \(auxTitle!)" : ""
         
-        messageTextLabel.text = text
+        messageTextLabel?.text = text
         
         // create a new button
         let button = UIButton(type: .custom)
@@ -51,7 +51,7 @@ final class MessageDetailViewModel: UIViewController, Storyboarded {
         button.setTitle(" \(NSLocalizedString("back", comment: "Back"))", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         // add function for button
-        button.addTarget(self, action: #selector(goToHistoryView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         // set frame
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         
@@ -60,7 +60,7 @@ final class MessageDetailViewModel: UIViewController, Storyboarded {
         self.navigationItem.leftBarButtonItem = barButton
     }
     
-    @objc private func goToHistoryView() {
-        coordinator?.goToRootView()
+    @objc func goBack() {
+        coordinator?.goBack()
     }
 }

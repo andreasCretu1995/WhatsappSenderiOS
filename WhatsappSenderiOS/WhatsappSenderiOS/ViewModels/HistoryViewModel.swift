@@ -20,7 +20,7 @@ final class HistoryViewModel: UIViewController, UINavigationBarDelegate, UISearc
     @IBOutlet weak var messageHistoryTableView: UITableView!
     
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
-    
+
     var context: NSManagedObjectContext?
     
     var entity: NSEntityDescription?
@@ -48,18 +48,20 @@ final class HistoryViewModel: UIViewController, UINavigationBarDelegate, UISearc
         
         title = NSLocalizedString("history_view_title_history", comment: "History")
         
-        coordinator = MainCoordinator(navigationController: self.navigationController!)
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        coordinator = MainCoordinator(navigationController: self.navigationController)
 
         // refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("contacts_view_refreshControl_title", comment: "Pull to refresh"))
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         
-        searchBar.delegate = self
+        searchBar?.delegate = self
         
-        searchBar.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
+        searchBar?.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
         
-        messageHistoryTableView.refreshControl = refreshControl
+        messageHistoryTableView?.refreshControl = refreshControl
         
-        context = appDelegate!.persistentContainer.viewContext
+        context = appDelegate?.persistentContainer.viewContext
         
         entity = NSEntityDescription.entity(forEntityName: Constants().messagesEntity, in: context!)!
     
@@ -100,7 +102,7 @@ final class HistoryViewModel: UIViewController, UINavigationBarDelegate, UISearc
         
         super.viewDidAppear(true)
         
-        if appDelegate?.userDefaults.bool(forKey: Constants().authenticateUserDefaultNameOnHistory) == true {
+        if appDelegate?.userDefaults.bool(forKey: Constants().authenticateUserDefaultNameOnHistory) == true || AppDelegate.isRunningTest {
             refresh(nil)
         } else {
             authenticate()
@@ -176,12 +178,12 @@ final class HistoryViewModel: UIViewController, UINavigationBarDelegate, UISearc
 extension HistoryViewModel: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchdata.count
+        return searchdata?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.reuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.cellReuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
             fatalError("Unexpected Index Path = \(indexPath.debugDescription)")
         }
         
@@ -213,7 +215,9 @@ extension HistoryViewModel: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let message = searchdata[indexPath.row]
+        guard let message = searchdata?[indexPath.row] else {
+            return
+        }
         
         coordinator?.goToMessageDetailView(message: message)
     }

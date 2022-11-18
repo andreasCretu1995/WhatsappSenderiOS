@@ -39,16 +39,18 @@ final class ContactsViewModel: UIViewController, UINavigationBarDelegate, UISear
         
         title = NSLocalizedString("contacts_view_title_contacts", comment: "Contacts")
 
-        coordinator = MainCoordinator(navigationController: self.navigationController!)
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+
+        coordinator = MainCoordinator(navigationController: self.navigationController)
                 
         // refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("contacts_view_refreshControl_title", comment: "Pull to refresh"))
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         
-        contactsTableView.refreshControl = refreshControl
+        contactsTableView?.refreshControl = refreshControl
         
-        searchBar.delegate = self
+        searchBar?.delegate = self
         
-        searchBar.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
+        searchBar?.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
                 
         // Get the supported biometry
         biometry = context.biometryType
@@ -85,7 +87,7 @@ final class ContactsViewModel: UIViewController, UINavigationBarDelegate, UISear
         
         super.viewDidAppear(true)
         
-        if appDelegate?.userDefaults.bool(forKey: Constants().authenticateUserDefaultNameOnContacts) == true {
+        if appDelegate?.userDefaults.bool(forKey: Constants().authenticateUserDefaultNameOnContacts) == true || AppDelegate.isRunningTest {
             refresh(nil)
         } else {
             authenticate()
@@ -99,7 +101,7 @@ final class ContactsViewModel: UIViewController, UINavigationBarDelegate, UISear
         
         searchdata = contacts
         
-        contactsTableView.reloadData()
+        contactsTableView?.reloadData()
         
         refreshControl.endRefreshing()
     }
@@ -113,7 +115,7 @@ final class ContactsViewModel: UIViewController, UINavigationBarDelegate, UISear
         
         searchBar.endEditing(true)
         
-        contactsTableView.reloadData()
+        contactsTableView?.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -127,35 +129,37 @@ final class ContactsViewModel: UIViewController, UINavigationBarDelegate, UISear
             return condition
         }
         
-        contactsTableView.reloadData()
+        contactsTableView?.reloadData()
     }
 }
 
 extension ContactsViewModel: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchdata!.count
+        return searchdata?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.reuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.cellReuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
             fatalError("Unexpected Index Path = \(indexPath.debugDescription)")
         }
 
         // Fetch Quote
-        let contact = searchdata![indexPath.row]
+        let contact = searchdata?[indexPath.row]
 
         // Configure Cell
-        cell.cellLabel.text = "\(contact.givenName ?? "") \(contact.familyName ?? "") \(contact.phoneNumber ?? "")"
+        cell.cellLabel.text = "\(contact?.givenName ?? "") \(contact?.familyName ?? "") \(contact?.phoneNumber ?? "")"
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let contact = searchdata![indexPath.row]
-        
+        guard let contact = searchdata?[indexPath.row] else {
+            return
+        }
+
         if searchBar.text!.isEmpty && indexPath.row == 0 {
             
             // Declare Alert message

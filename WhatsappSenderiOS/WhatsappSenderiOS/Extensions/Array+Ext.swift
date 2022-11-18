@@ -7,10 +7,12 @@
 
 import Foundation
 
-extension Array where Element: Equatable {
+extension Array where Element: Hashable {
     
     func removeDuplicates() -> [Element] {
         
+        guard hasDuplicates() else { return self }
+                
         var result = [Element]()
         
         for value in self {
@@ -21,5 +23,12 @@ extension Array where Element: Equatable {
         }
         
         return result
+    }
+    
+    func hasDuplicates() -> Bool {
+        
+        let dups = Dictionary(grouping: self, by: { $0 }).filter { $1.count > 1 }.keys
+        
+        return !dups.isEmpty
     }
 }

@@ -11,7 +11,7 @@ class ContactsTableViewCell: UITableViewCell {
 
     // MARK: - Properties
 
-    static let reuseIdentifier = Constants().reuseIdentifier
+    static let cellReuseIdentifier = Constants().reuseIdentifier
 
     @IBOutlet weak var cellLabel: UILabel!
 

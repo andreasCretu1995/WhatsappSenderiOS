@@ -45,4 +45,8 @@ class MainCoordinator: Coordinator {
         
         navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func goBack() {
+        navigationController?.popViewController(animated: true)
+    }
 }

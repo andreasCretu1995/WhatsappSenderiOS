@@ -32,7 +32,7 @@
         <scene sceneID="c1d-sc-N5u">
             <objects>
                 <viewController storyboardIdentifier="ContactsViewModel" id="aOX-SL-zGB" customClass="ContactsViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YhY-3Q-BN1">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="YhY-3Q-BN1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -459,10 +459,10 @@
             </objects>
             <point key="canvasLocation" x="-1688" y="-48"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Model-->
         <scene sceneID="3e8-7L-W5U">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="lLj-Wa-6ho" customClass="TabBarController" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewModel" id="lLj-Wa-6ho" customClass="TabBarViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="pCc-zV-fna"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="id2-dL-A11">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>

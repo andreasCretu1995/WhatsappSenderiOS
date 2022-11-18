@@ -11,12 +11,12 @@ import UIKit
 
 class ContactModel: NSObject {
     
-    var identifier: String? = ""
-    var givenName: String? = ""
-    var familyName: String? = ""
-    var phoneNumber: String? = ""
+    var identifier: String?
+    var givenName: String?
+    var familyName: String?
+    var phoneNumber: String?
     
-    init(identifier: String?, givenName: String?, familyName: String?, phoneNumber: String?) {
+    init(identifier: String? = "", givenName: String? = "", familyName: String? = "", phoneNumber: String? = "") {
         
         self.identifier = identifier
         self.givenName = givenName

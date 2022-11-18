@@ -11,23 +11,29 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    // MARK: Properties
+
     var window: UIWindow?
     
     var userDefaults: UserDefaults!
     
-    var tabbarViewController = TabBarController()
+    var tabbarViewController = UIStoryboard(name: Constants().UIStoryboardName, bundle: nil).instantiateInitialViewController() as? TabBarViewModel
+
+    public static var isRunningTest: Bool {
+        return ProcessInfo().arguments.contains("isRunningTest")
+    }
+    
+    // MARK: UIApplication Lifecycle
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        sleep(1)
-        
         self.userDefaults = UserDefaults(suiteName: Constants().userDefaultsSuitName)
         self.removeUserDefaults(userDefaults: self.userDefaults)
 
         self.createItems3DTouch()
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UIStoryboard(name: Constants().UIStoryboardName, bundle: nil).instantiateInitialViewController()
+        window?.rootViewController = tabbarViewController
         window?.makeKeyAndVisible()
         
         return true
@@ -37,10 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         switch shortcutItem.type {
         case Constants().historyViewQuickAccessType:
-            tabbarViewController.showView(index: 1)
+            tabbarViewController?.showView(index: 1)
 
         default:
-            tabbarViewController.showView(index: 0)
+            tabbarViewController?.showView(index: 0)
         }
         
         return true
@@ -129,17 +135,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func removeUserDefaults(userDefaults: UserDefaults!) {
+    func removeUserDefaults(userDefaults: UserDefaults?) {
         
-        let dict: [String: Any]! = userDefaults.dictionaryRepresentation()
+        guard let dict: [String: Any] = userDefaults?.dictionaryRepresentation(), !dict.isEmpty else { return }
         
         for (key, _) in dict {
             
             // if key != "authenticated" {
-                userDefaults.removeObject(forKey: key)
+                userDefaults?.removeObject(forKey: key)
             // }
         }
         
-        userDefaults.synchronize()
+        userDefaults?.synchronize()
     }
 }

@@ -30,7 +30,7 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
     
     var messages: [NSManagedObject] = []
     
-    var searchdata: [NSManagedObject]!
+    var searchdata: [NSManagedObject]? = []
     
     let refreshControl = UIRefreshControl()
     
@@ -38,6 +38,8 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         
         super.viewDidLoad()
         
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+
         let auxTitle = (contact.identifier != nil) ? "\(contact.givenName ?? "") \(contact.familyName ?? "")" : "\(contact.phoneNumber!)"
         
         title = "\(NSLocalizedString("chat_view_title_contacts", comment: "Chat")) \(auxTitle)"
@@ -51,7 +53,7 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         button.setTitle(" \(NSLocalizedString("back", comment: "Back"))", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
         // add function for button
-        button.addTarget(self, action: #selector(goToRootView), for: .touchUpInside)
+        button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         // set frame
         button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         
@@ -59,16 +61,16 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         // assign button to navigationbar
         self.navigationItem.leftBarButtonItem = barButton
         
-        self.messageTextField.placeholder = NSLocalizedString("chats_view_messageTextField_placeholder", comment: "Message")
+        self.messageTextField?.placeholder = NSLocalizedString("chats_view_messageTextField_placeholder", comment: "Message")
         
-        searchBar.delegate = self
+        searchBar?.delegate = self
         
-        searchBar.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
+        searchBar?.placeholder = NSLocalizedString("contacts_view_searchBar_placeholder", comment: "Search")
         
         // refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("contacts_view_refreshControl_title", comment: "Pull to refresh"))
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         
-        chatMessagesTableView.refreshControl = refreshControl
+        chatMessagesTableView?.refreshControl = refreshControl
         
         context = appDelegate!.persistentContainer.viewContext
         
@@ -77,11 +79,11 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         fetchMessages()
     }
     
-    @objc func refresh(_ sender: AnyObject) {
+    @objc func refresh(_ sender: AnyObject?) {
         // Code to refresh table view
         fetchMessages()
         
-        chatMessagesTableView.reloadData()
+        chatMessagesTableView?.reloadData()
         
         refreshControl.endRefreshing()
     }
@@ -103,8 +105,8 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         }
     }
     
-    @objc private func goToRootView() {
-        coordinator?.goToRootView()
+    @objc func goBack() {
+        coordinator?.goBack()
     }
     
     // MARK: - SEARCH BAR DELEGATE METHOD FUNCTION
@@ -116,7 +118,7 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         
         searchBar.endEditing(true)
         
-        chatMessagesTableView.reloadData()
+        chatMessagesTableView?.reloadData()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -132,10 +134,10 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
             return condition
         }
         
-        chatMessagesTableView.reloadData()
+        chatMessagesTableView?.reloadData()
     }
     
-    @IBAction func sendMessage(_ sender: Any) {
+    @IBAction func sendMessage(_ sender: Any?) {
         
         guard entity != nil, context != nil, contact != nil, !contact.phoneNumber!.isEmpty, let message = messageTextField.text, !message.isEmpty
         else {
@@ -178,20 +180,20 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
 extension ChatsViewModel: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchdata.count
+        return searchdata?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.reuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsTableViewCell.cellReuseIdentifier, for: indexPath) as? ContactsTableViewCell else {
             fatalError("Unexpected Index Path = \(indexPath.debugDescription)")
         }
         
-        let message = searchdata[indexPath.row]
+        let message = searchdata?[indexPath.row]
         
         // Configure Cell
-        let text = message.value(forKeyPath: "text") as? String
-        let sendedDate = message.value(forKeyPath: "sendedDate") as? Date
+        let text = message?.value(forKeyPath: "text") as? String
+        let sendedDate = message?.value(forKeyPath: "sendedDate") as? Date
         
         cell.cellLabel.text = "\(sendedDate!.toString(withFormat: Constants().datesFormat)) \(text!)"
         
@@ -200,7 +202,9 @@ extension ChatsViewModel: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let message = searchdata[indexPath.row]
+        guard let message = searchdata?[indexPath.row] else {
+            return
+        }
         
         coordinator?.goToMessageDetailView(message: message)
     }

@@ -1,5 +1,5 @@
 //
-//  TabBarController.swift
+//  TabBarControllerViewModel.swift
 //  WhatsappSenderiOS
 //
 //  Created by Andreas Alexandru Cretu on 15/11/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TabBarController: UITabBarController, Storyboarded {
+final class TabBarViewModel: UITabBarController, Storyboarded {
     
      func showView(index: Int) {
         
