@@ -269,7 +269,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujQ-NN-8cP">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                                <rect key="frame" x="8" y="0.0" width="320" height="568"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -278,10 +278,10 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="ujQ-NN-8cP" secondAttribute="bottom" id="5b3-8z-kqz"/>
-                                            <constraint firstAttribute="trailing" secondItem="ujQ-NN-8cP" secondAttribute="trailing" id="9vu-Cf-aNf"/>
+                                            <constraint firstAttribute="trailing" secondItem="ujQ-NN-8cP" secondAttribute="trailing" constant="-8" id="9vu-Cf-aNf"/>
                                             <constraint firstAttribute="width" constant="320" id="Rd2-KI-K4j"/>
                                             <constraint firstItem="ujQ-NN-8cP" firstAttribute="top" secondItem="CIh-nK-bWS" secondAttribute="top" id="Xkx-7r-huU"/>
-                                            <constraint firstItem="ujQ-NN-8cP" firstAttribute="leading" secondItem="CIh-nK-bWS" secondAttribute="leading" id="lAr-Ye-Tde"/>
+                                            <constraint firstItem="ujQ-NN-8cP" firstAttribute="leading" secondItem="CIh-nK-bWS" secondAttribute="leading" constant="8" id="lAr-Ye-Tde"/>
                                             <constraint firstAttribute="width" secondItem="CIh-nK-bWS" secondAttribute="height" multiplier="40:71" id="mis-Lz-Hhn"/>
                                             <constraint firstAttribute="height" constant="568" id="vp1-TJ-E9x"/>
                                         </constraints>
