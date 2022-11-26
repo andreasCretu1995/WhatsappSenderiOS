@@ -9,7 +9,7 @@ import Contacts
 import Foundation
 import UIKit
 
-class ContactModel: NSObject {
+class ContactModel: Equatable {
     
     var identifier: String?
     var givenName: String?
@@ -51,7 +51,7 @@ class ContactModel: NSObject {
             contactsData.append(auxContact)
         })
         
-        return contactsData.removeDuplicates()
+        return unique(contacts: contactsData)
     }
     
     // swiftlint:disable function_body_length
@@ -305,4 +305,21 @@ class ContactModel: NSObject {
         return ""
     }
     // swiftlint:enable function_body_length
+    
+    static func == (lhs: ContactModel, rhs: ContactModel) -> Bool {
+        return lhs.identifier == rhs.identifier || lhs.phoneNumber == rhs.phoneNumber
+    }
+    
+    static func unique(contacts: [ContactModel]) -> [ContactModel] {
+        
+        var uniqueContacts = [ContactModel]()
+        
+        for contact in contacts {
+            if !uniqueContacts.contains(contact) {
+                uniqueContacts.append(contact)
+            }
+        }
+        
+        return uniqueContacts
+    }
 }

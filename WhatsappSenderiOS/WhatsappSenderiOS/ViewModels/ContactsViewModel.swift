@@ -206,4 +206,8 @@ extension ContactsViewModel: UITableViewDataSource, UITableViewDelegate {
             coordinator?.goToChatView(contact: contact)
         }
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ContactsTableViewCell.heightForRowAt;// Choose your custom row height
+    }
 }

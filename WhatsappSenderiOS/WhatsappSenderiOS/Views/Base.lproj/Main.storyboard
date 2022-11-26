@@ -33,7 +33,7 @@
             <objects>
                 <viewController storyboardIdentifier="ContactsViewModel" id="aOX-SL-zGB" customClass="ContactsViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" misplaced="YES" id="YhY-3Q-BN1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkO-I5-ug6">
@@ -366,7 +366,7 @@
             <objects>
                 <viewController storyboardIdentifier="HistoryViewModel" id="VT3-e8-28M" customClass="HistoryViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" misplaced="YES" id="7oA-na-QXO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TbD-Rb-QfJ">

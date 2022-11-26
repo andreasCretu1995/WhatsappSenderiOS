@@ -221,4 +221,8 @@ extension HistoryViewModel: UITableViewDataSource, UITableViewDelegate {
         
         coordinator?.goToMessageDetailView(message: message)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return ContactsTableViewCell.heightForRowAt;// Choose your custom row height
+    }
 }
