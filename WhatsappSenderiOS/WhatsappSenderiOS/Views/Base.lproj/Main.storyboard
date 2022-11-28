@@ -102,6 +102,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rxt-Q8-D9L"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S37-bm-U7q" firstAttribute="leading" secondItem="Rxt-Q8-D9L" secondAttribute="leading" id="0KV-q1-YdF"/>
                             <constraint firstItem="vkO-I5-ug6" firstAttribute="leading" secondItem="Rxt-Q8-D9L" secondAttribute="leading" id="CMl-js-GKZ"/>
@@ -399,6 +400,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9Nn-aQ-L6f"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1d5-7h-kU8" firstAttribute="trailing" secondItem="9Nn-aQ-L6f" secondAttribute="trailing" id="074-c7-bWO"/>
                             <constraint firstItem="9Nn-aQ-L6f" firstAttribute="bottom" secondItem="1d5-7h-kU8" secondAttribute="bottom" id="2Zb-e6-7HD"/>
