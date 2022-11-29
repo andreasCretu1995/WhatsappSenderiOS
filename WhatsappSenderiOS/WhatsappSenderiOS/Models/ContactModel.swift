@@ -36,7 +36,7 @@ class ContactModel: Equatable {
             let givenName = contact.givenName
             let familyName = contact.familyName
             var phoneNumber: String = contact.phoneNumbers.isEmpty ? "" : contact.phoneNumbers[0].value.stringValue.stringByRemovingWhitespaces
-            let countryCode: String = contact.phoneNumbers.isEmpty ? "es" : (contact.phoneNumbers[0].value).value(forKey: "countryCode") as! String
+            let countryCode: String = contact.phoneNumbers.isEmpty ? "es" : (contact.phoneNumbers[0].value).value(forKey: "countryCode") as? String ?? "es"
             let countryPrefix: String = getCountryPhonceCode(countryCode.uppercased())
             let identifier = contact.identifier
             

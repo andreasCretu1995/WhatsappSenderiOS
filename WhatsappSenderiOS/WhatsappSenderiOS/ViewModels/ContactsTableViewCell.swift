@@ -12,7 +12,7 @@ class ContactsTableViewCell: UITableViewCell {
     // MARK: - Properties
 
     static let cellReuseIdentifier = Constants().reuseIdentifier
-    static let heightForRowAt: CGFloat = 43.0
+    static let heightForRowAt: CGFloat = Constants().heightForRowAt
 
     @IBOutlet weak var cellLabel: UILabel!
 

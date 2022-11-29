@@ -15,9 +15,9 @@
                 <navigationController id="kYZ-4Z-Ikn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="cMU-x2-Evv"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Qzw-Xw-5XU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <outlet property="navigationBar" destination="Qzw-Xw-5XU" id="QeT-bb-THa"/>
@@ -32,7 +32,7 @@
         <scene sceneID="c1d-sc-N5u">
             <objects>
                 <viewController storyboardIdentifier="ContactsViewModel" id="aOX-SL-zGB" customClass="ContactsViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="YhY-3Q-BN1">
+                    <view key="view" contentMode="scaleToFill" id="YhY-3Q-BN1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -249,14 +249,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AZ-ur-acp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yi9-ex-nCi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CIh-nK-bWS">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kes-Xx-enZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujQ-NN-8cP">
-                                                <rect key="frame" x="8" y="8" width="304" height="552"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbQ-pe-7W2">
+                                                <rect key="frame" x="8" y="8" width="304" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -264,45 +264,35 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="ujQ-NN-8cP" secondAttribute="bottom" constant="8" id="5b3-8z-kqz"/>
-                                            <constraint firstAttribute="trailing" secondItem="ujQ-NN-8cP" secondAttribute="trailing" constant="8" id="9vu-Cf-aNf"/>
-                                            <constraint firstAttribute="width" constant="320" id="Rd2-KI-K4j"/>
-                                            <constraint firstItem="ujQ-NN-8cP" firstAttribute="top" secondItem="CIh-nK-bWS" secondAttribute="top" constant="8" id="Xkx-7r-huU"/>
-                                            <constraint firstItem="ujQ-NN-8cP" firstAttribute="leading" secondItem="CIh-nK-bWS" secondAttribute="leading" constant="8" id="lAr-Ye-Tde"/>
-                                            <constraint firstAttribute="width" secondItem="CIh-nK-bWS" secondAttribute="height" multiplier="40:71" id="mis-Lz-Hhn"/>
-                                            <constraint firstAttribute="height" constant="568" id="vp1-TJ-E9x"/>
+                                            <constraint firstAttribute="bottom" secondItem="MbQ-pe-7W2" secondAttribute="bottom" id="SfX-Xz-UZb"/>
+                                            <constraint firstItem="MbQ-pe-7W2" firstAttribute="top" secondItem="kes-Xx-enZ" secondAttribute="top" constant="8" id="Ve0-0G-c9p"/>
+                                            <constraint firstAttribute="trailing" secondItem="MbQ-pe-7W2" secondAttribute="trailing" constant="8" id="WdO-fQ-RRi"/>
+                                            <constraint firstItem="MbQ-pe-7W2" firstAttribute="leading" secondItem="kes-Xx-enZ" secondAttribute="leading" constant="8" id="rPo-XF-Y2W"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="CIh-nK-bWS" firstAttribute="centerY" secondItem="gRy-AV-PhY" secondAttribute="centerY" id="7Ne-js-FDS"/>
-                                    <constraint firstItem="bIb-vf-H7l" firstAttribute="trailing" secondItem="CIh-nK-bWS" secondAttribute="trailing" id="7lK-Ae-J2O"/>
-                                    <constraint firstItem="CIh-nK-bWS" firstAttribute="leading" secondItem="bIb-vf-H7l" secondAttribute="leading" id="QhF-2S-5vN"/>
-                                    <constraint firstItem="gRy-AV-PhY" firstAttribute="width" secondItem="CIh-nK-bWS" secondAttribute="height" multiplier="40:71" id="UuE-1n-L46"/>
-                                    <constraint firstAttribute="width" secondItem="8AZ-ur-acp" secondAttribute="height" multiplier="40:71" id="ZfY-XY-HaM"/>
-                                    <constraint firstItem="gRy-AV-PhY" firstAttribute="width" secondItem="CIh-nK-bWS" secondAttribute="width" id="fyd-KN-5fF"/>
-                                    <constraint firstItem="CIh-nK-bWS" firstAttribute="centerX" secondItem="gRy-AV-PhY" secondAttribute="centerX" id="hjQ-H9-mzr"/>
-                                    <constraint firstAttribute="width" constant="320" id="ikw-UR-Sc7"/>
-                                    <constraint firstItem="bIb-vf-H7l" firstAttribute="bottom" secondItem="CIh-nK-bWS" secondAttribute="bottom" id="kwB-xc-r0y"/>
-                                    <constraint firstAttribute="height" constant="568" id="naO-tU-dTW"/>
-                                    <constraint firstItem="gRy-AV-PhY" firstAttribute="height" secondItem="CIh-nK-bWS" secondAttribute="height" id="sRI-yr-CiX"/>
-                                    <constraint firstItem="CIh-nK-bWS" firstAttribute="top" secondItem="bIb-vf-H7l" secondAttribute="top" id="vmy-ag-TSi"/>
+                                    <constraint firstItem="kes-Xx-enZ" firstAttribute="leading" secondItem="dYb-ZN-38i" secondAttribute="leading" id="H3K-sb-PIu"/>
+                                    <constraint firstItem="kes-Xx-enZ" firstAttribute="bottom" secondItem="dYb-ZN-38i" secondAttribute="bottom" id="WLD-GR-aGX"/>
+                                    <constraint firstItem="kes-Xx-enZ" firstAttribute="top" secondItem="dYb-ZN-38i" secondAttribute="top" id="YkA-CT-48J"/>
+                                    <constraint firstItem="kes-Xx-enZ" firstAttribute="width" secondItem="e0L-E8-hcu" secondAttribute="width" id="Z4x-vO-s2I"/>
+                                    <constraint firstItem="kes-Xx-enZ" firstAttribute="trailing" secondItem="dYb-ZN-38i" secondAttribute="trailing" id="mhM-xW-kwv"/>
                                 </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="gRy-AV-PhY"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="bIb-vf-H7l"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="dYb-ZN-38i"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="e0L-E8-hcu"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q4e-Am-dK2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8AZ-ur-acp" firstAttribute="leading" secondItem="Q4e-Am-dK2" secondAttribute="leading" id="6KO-FJ-nef"/>
-                            <constraint firstItem="8AZ-ur-acp" firstAttribute="top" secondItem="Q4e-Am-dK2" secondAttribute="top" id="7w5-Zh-4PP"/>
-                            <constraint firstItem="8AZ-ur-acp" firstAttribute="bottom" secondItem="Q4e-Am-dK2" secondAttribute="bottom" id="moJ-oC-BhB"/>
-                            <constraint firstItem="8AZ-ur-acp" firstAttribute="trailing" secondItem="Q4e-Am-dK2" secondAttribute="trailing" id="xdx-u2-4lK"/>
+                            <constraint firstItem="yi9-ex-nCi" firstAttribute="trailing" secondItem="Q4e-Am-dK2" secondAttribute="trailing" id="VgR-4Y-SrA"/>
+                            <constraint firstItem="yi9-ex-nCi" firstAttribute="leading" secondItem="Q4e-Am-dK2" secondAttribute="leading" id="gaH-eW-0Ix"/>
+                            <constraint firstItem="yi9-ex-nCi" firstAttribute="bottom" secondItem="Q4e-Am-dK2" secondAttribute="bottom" id="qmc-rp-acS"/>
+                            <constraint firstItem="yi9-ex-nCi" firstAttribute="top" secondItem="Q4e-Am-dK2" secondAttribute="top" id="xOD-X8-pKa"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="messageTextLabel" destination="ujQ-NN-8cP" id="ZDW-G7-oMJ"/>
+                        <outlet property="messageTextLabel" destination="MbQ-pe-7W2" id="2hV-wv-6KY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GP-fe-GAP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -317,7 +307,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="I0p-ZL-Azu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VT3-e8-28M" kind="relationship" relationship="rootViewController" id="QI5-5E-4Jf"/>
@@ -331,7 +321,7 @@
         <scene sceneID="onC-O0-gbH">
             <objects>
                 <viewController storyboardIdentifier="HistoryViewModel" id="VT3-e8-28M" customClass="HistoryViewModel" customModule="WhatsappSenderiOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="7oA-na-QXO">
+                    <view key="view" contentMode="scaleToFill" id="7oA-na-QXO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

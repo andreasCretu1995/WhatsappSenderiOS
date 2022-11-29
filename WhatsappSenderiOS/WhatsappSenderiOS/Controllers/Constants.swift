@@ -20,4 +20,5 @@ final class Constants {
     let datesFormat = "dd-MM-yyyy HH:mm:ss"
     let contactsViewQuickAccessType = "contacts.view.quick.access"
     let historyViewQuickAccessType = "history.view.quick.access"
+    let heightForRowAt: CGFloat = 43.0
 }

@@ -11,7 +11,9 @@ extension Array where Element: Hashable {
     
     func removeDuplicates() -> [Element] {
         
-        guard hasDuplicates() else { return self }
+        guard hasDuplicates() else {
+            return self
+        }
                 
         var result = [Element]()
         

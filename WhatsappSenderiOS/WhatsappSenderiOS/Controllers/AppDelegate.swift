@@ -137,7 +137,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func removeUserDefaults(userDefaults: UserDefaults?) {
         
-        guard let dict: [String: Any] = userDefaults?.dictionaryRepresentation(), !dict.isEmpty else { return }
+        guard let dict: [String: Any] = userDefaults?.dictionaryRepresentation(), !dict.isEmpty else {
+            return
+        }
         
         for (key, _) in dict {
             
