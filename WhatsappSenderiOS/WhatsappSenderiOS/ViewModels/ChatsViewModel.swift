@@ -8,7 +8,7 @@
 import CoreData
 import UIKit
 
-final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded {
+final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded, UITextFieldDelegate {
     
     var contact: ContactModel!
     
@@ -38,7 +38,17 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         
         super.viewDidLoad()
         
+        messageTextField.delegate = self
+        
         appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        // Looks for single or multiple taps.
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        // Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        // tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
 
         let auxTitle = (contact.identifier != nil) ? "\(contact.givenName ?? "") \(contact.familyName ?? "")" : "\(contact.phoneNumber!)"
         
@@ -121,6 +131,10 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         chatMessagesTableView?.reloadData()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchdata = searchText.isEmpty ? messages : messages.filter { (item: NSManagedObject) -> Bool in
@@ -137,7 +151,18 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
         chatMessagesTableView?.reloadData()
     }
     
+    /**
+     * Called when 'return' key pressed. return NO to ignore.
+     */
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // textField.resignFirstResponder()
+        sendMessage(nil)
+        return true
+    }
+    
     @IBAction func sendMessage(_ sender: Any?) {
+        
+        dismissKeyboard()
         
         guard entity != nil, context != nil, contact != nil, !contact.phoneNumber!.isEmpty, let message = messageTextField.text, !message.isEmpty
         else {
@@ -171,9 +196,17 @@ final class ChatsViewModel: UIViewController, UISearchBarDelegate, Storyboarded 
             chatMessagesTableView.reloadData()
             
             messageTextField.text = ""
+            
+            searchBarCancelButtonClicked(searchBar)
         } catch {
             ErrorMessages.errorSaving.showErrorAlert(viewController: self)
         }
+    }
+    
+    // Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        // Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
 
